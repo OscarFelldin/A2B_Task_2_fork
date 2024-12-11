@@ -1,0 +1,35 @@
+project-root/
+├── public/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── login.js
+│   ├── login.html
+│   └── dashboard.html
+├── src/
+│   ├── config/
+│   │   └── database.js
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── userController.js
+│   │   └── accountController.js
+│   ├── middleware/
+│   │   ├── auth.js
+│   │   ├── apiLogger.js
+│   │   └── errorHandler.js
+│   ├── models/
+│   │   ├── account.js
+│   │   ├── accountPrivileges.js
+│   │   ├── accountSettings.js
+│   │   ├── user.js
+│   │   ├── userSettings.js
+│   │   ├── role.js
+│   │   └── index.js
+│   └── routes/
+│       ├── authRoutes.js
+│       ├── userRoutes.js
+│       └── accountRoutes.js
+├── .env
+├── .gitignore
+├── package.json
+└── server.js 

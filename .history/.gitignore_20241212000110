@@ -1,0 +1,7 @@
+# Node.js project
+node_modules/
+dist/
+.env
+
+# Mac system files
+.DS_Store
