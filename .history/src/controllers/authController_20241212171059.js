@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 const { User, Account, Role } = require('../models');
 
 const authController = {
@@ -19,7 +20,7 @@ const authController = {
             attributes: ['role_name']
           }
         ],
-        attributes: ['user_id', 'username', 'user_password', 'first_name', 'last_name', 'account_id', 'role_id']
+        attributes: ['user_password']
       });
 
       if (!user) {
@@ -27,10 +28,9 @@ const authController = {
         return res.status(401).json({ message: 'Invalid credentials' });
       }
 
-      console.log('Stored password:', user.user_password);
-      console.log('Provided password:', password);
-      
-      if (password !== user.user_password) {
+      // Verify password
+      const isValidPassword = await bcrypt.compare(password, user.user_password);
+      if (!isValidPassword) {
         console.log('Invalid password');
         return res.status(401).json({ message: 'Invalid credentials' });
       }

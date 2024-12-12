@@ -45,7 +45,6 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/login.html');
 });
 
-// Serve dashboard page for root route
 app.get('/dashboard', (req, res) => {
   res.sendFile(__dirname + '/public/dashboard.html');
 });

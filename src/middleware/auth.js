@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken');
+
 const auth = (req, res, next) => {
     try {
         const authHeader = req.headers.authorization;
@@ -6,7 +8,7 @@ const auth = (req, res, next) => {
         }
 
         const token = authHeader.split(' ')[1];
-        const decoded = JSON.parse(Buffer.from(token, 'base64').toString());
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         
         if (!decoded.user_id) {
             return res.status(401).json({ message: 'Invalid token' });

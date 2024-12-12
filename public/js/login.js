@@ -6,7 +6,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     const messageDiv = document.getElementById('message');
     
     try {
-        const response = await fetch('/api/login', {
+        const response = await fetch('/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -19,7 +19,9 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         if (response.ok) {
             messageDiv.textContent = 'Login successful!';
             messageDiv.style.color = 'green';
-            // Redirect to dashboard or home page
+            // Store the JWT token
+            localStorage.setItem('token', data.token);
+            // Redirect to dashboard
             window.location.href = '/dashboard';
         } else {
             messageDiv.textContent = data.message || 'Login failed';

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node ./node_modules/nodemon/bin/nodemon.js server.js",
-    "test-db": "node src/config/database.js"
+    "test-db": "node src/config/database.js",
+    "create-test-user": "node scripts/create-test-user.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
