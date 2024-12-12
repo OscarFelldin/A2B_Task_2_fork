@@ -2,11 +2,11 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { sequelize } = require('./src/config/database');
-const authRoutes = require('./src/routes/authRoutes'); // Ensure this file exists
-const userRoutes = require('./src/routes/userRoutes'); // Ensure this file exists
-const accountRoutes = require('./src/routes/accountRoutes'); // Ensure this file exists
-const errorHandler = require('./src/middleware/errorHandler'); // Ensure this file exists
-const authMiddleware = require('./src/middleware/auth'); // Ensure this file exists
+const authRoutes = require('./src/routes/authRoutes'); 
+const userRoutes = require('./src/routes/userRoutes'); 
+const accountRoutes = require('./src/routes/accountRoutes'); 
+const errorHandler = require('./src/middleware/errorHandler'); 
+const authMiddleware = require('./src/middleware/auth'); 
 const apiLogger = require('./src/middleware/apiLogger');
 const bcrypt = require('bcrypt');
 
