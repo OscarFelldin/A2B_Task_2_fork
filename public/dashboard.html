@@ -157,12 +157,12 @@
                 document.getElementById('email').textContent = data.email;
                 document.getElementById('fullName').textContent = `${data.first_name} ${data.last_name}`;
                 document.getElementById('phone').textContent = data.phone || 'Not provided';
-                document.getElementById('accountName').textContent = data.Account.account_name;
-                document.getElementById('roleName').textContent = data.Role.role_name;
+                document.getElementById('accountName').textContent = data.account_name;
+                document.getElementById('roleName').textContent = data.role_name;
 
                 // Populate privileges
                 const privilegesDiv = document.getElementById('privileges');
-                const privileges = data.Account.AccountPrivilege;
+                const privileges = data.AccountPrivilege;
                 if (privileges) {
                     Object.entries(privileges).forEach(([key, value]) => {
                         if (key !== 'id' && key !== 'account_id') {
