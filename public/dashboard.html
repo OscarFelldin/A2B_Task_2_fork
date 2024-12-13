@@ -140,9 +140,9 @@
         async function fetchUserData() {
             try {
                 const response = await fetch('/api/users/me', {
-                    headers: {
+                     headers: {
                         'Authorization': `Bearer ${token}`
-                    }
+                     }
                 });
                 
                 if (!response.ok) {
